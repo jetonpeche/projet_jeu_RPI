@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 081fe88ac5c007e4da4bcc67edb7b7f5
+guid: 500207e337901e74da3d19561fc75669
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4089356975154649898
-    second: SpriteSheet Drapeau_0
+      213: -1274117858865617162
+    second: SpriteSheet Drapeau v9_0
   - first:
-      213: 7793414614876464465
-    second: SpriteSheet Drapeau_1
+      213: -5727125541486417877
+    second: SpriteSheet Drapeau v9_1
   - first:
-      213: 2400151776866839563
-    second: SpriteSheet Drapeau_2
+      213: -6606632449224047312
+    second: SpriteSheet Drapeau v9_2
   - first:
-      213: 8948593653804003930
-    second: SpriteSheet Drapeau_3
+      213: -5854570253671438735
+    second: SpriteSheet Drapeau v9_3
   - first:
-      213: -3670693043358981278
-    second: SpriteSheet Drapeau_4
+      213: -332482156730646500
+    second: SpriteSheet Drapeau v9_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet Drapeau_0
+      name: SpriteSheet Drapeau v9_0
       rect:
         serializedVersion: 2
         x: 0
@@ -120,14 +120,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d424285f7faf37c0800000000000000
-      internalID: -4089356975154649898
+      spriteID: 6f66554de8c615ee0800000000000000
+      internalID: -1274117858865617162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet Drapeau_1
+      name: SpriteSheet Drapeau v9_1
       rect:
         serializedVersion: 2
         x: 16
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 155ac0b0d45c72c60800000000000000
-      internalID: 7793414614876464465
+      spriteID: b28a2a3e9a92580b0800000000000000
+      internalID: -5727125541486417877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet Drapeau_2
+      name: SpriteSheet Drapeau v9_2
       rect:
         serializedVersion: 2
         x: 0
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0cab23135d0f4120800000000000000
-      internalID: 2400151776866839563
+      spriteID: 0358e667ac68054a0800000000000000
+      internalID: -6606632449224047312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet Drapeau_3
+      name: SpriteSheet Drapeau v9_3
       rect:
         serializedVersion: 2
         x: 16
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a527d46348acf2c70800000000000000
-      internalID: 8948593653804003930
+      spriteID: 17668558f5360cea0800000000000000
+      internalID: -5854570253671438735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet Drapeau_4
+      name: SpriteSheet Drapeau v9_4
       rect:
         serializedVersion: 2
         x: 0
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263271f00241f0dc0800000000000000
-      internalID: -3670693043358981278
+      spriteID: c100ae17d39c26bf0800000000000000
+      internalID: -332482156730646500
       vertices: []
       indices: 
       edges: []
