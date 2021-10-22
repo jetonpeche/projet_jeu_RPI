@@ -14,19 +14,6 @@ public class VieJoueur : MonoBehaviour
         vieActuelle = vieMax;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SubirDegats(20);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SeSoigner(20);
-        }
-    }
-
     public void SubirDegats(float degats)
     {
         vieActuelle -= degats;

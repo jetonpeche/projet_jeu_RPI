@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Deplacement : MonoBehaviour
 {
@@ -20,32 +21,14 @@ public class Deplacement : MonoBehaviour
 
     private bool saute = false;
     private bool estAuSol;
-    private string axeX, jump;
-
-    private void Start()
-    {
-        if (estJoueurDeux)
-        {
-            axeX = "Horizontal2";
-            jump = "Jump2";
-        }
-        else
-        {
-            axeX = "Horizontal";
-            jump = "Jump";
-        }
-    }
+    private float mouvH, mouvV;
 
     // Update is called once per frame
     void Update()
     {
-        float mouvH = Input.GetAxis(axeX) * vitesse * Time.deltaTime;
 
-        transform.Translate(new Vector2(mouvH, 0));
-        animator.SetFloat("vitesseMarche", Mathf.Abs(mouvH));
-
-        FlipX(mouvH);
-        Sauter();
+        transform.Translate(new Vector2(mouvH, 0) * vitesse * Time.deltaTime);
+        //animator.SetFloat("vitesseMarche", Mathf.Abs(mouvH));
     }
 
     private void FixedUpdate()
@@ -53,9 +36,21 @@ public class Deplacement : MonoBehaviour
         estAuSol = Physics2D.OverlapCircle(estAuSolTransform.position, radius, layerSol);
     }
 
-    private void Sauter()
+    public void OnHorizontal(InputValue _val)
     {
-        if (estAuSol && Input.GetButtonDown(jump))
+        mouvH = _val.Get<float>();
+        Debug.Log(mouvH);
+        FlipX(mouvH);
+    }
+
+    public void OnVertical(InputValue _val)
+    {
+        mouvV = _val.Get<float>();
+    }
+
+    public void OnSauter()
+    {
+        if (estAuSol)
         {
             saute = true;
         }
@@ -69,10 +64,16 @@ public class Deplacement : MonoBehaviour
 
     private void FlipX(float _mouvH)
     {
-        if (_mouvH < 0)
-            spriteRenderer.flipX = true;
-        else if (_mouvH > 0)
-            spriteRenderer.flipX = false;
+        switch (_mouvH)
+        {
+            case -1:
+                spriteRenderer.flipX = true;
+            break;
+
+            case 1:
+                spriteRenderer.flipX = false;
+            break;
+        }
     }
 
     private void OnDrawGizmos()
