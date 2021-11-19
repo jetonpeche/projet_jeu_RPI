@@ -1,22 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Levier : MonoBehaviour
 {
-    public bool estActive = false;
-    public Animator animator;
+    [SerializeField] private Animator animator;
+
+    private bool estActive = false;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (estActive)
+        if (collision.tag == "Player")
         {
-            animator.Play("LevierGaucheDroite");
-        }
-        else
-        {
-            animator.Play("LevierDroiteGauche");
+            Debug.Log("Collision levier");
+            if (Keyboard.current.eKey.isPressed)
+            {
+                Debug.Log("E Key Levier");
+                if (estActive)
+                {
+                    animator.Play("LevierGaucheDroite");
+                    estActive = false;
+                }
+                else
+                {
+                    animator.Play("LevierDroiteGauche");
+                    estActive = true;
+                }
+            }
         }
     }
 }

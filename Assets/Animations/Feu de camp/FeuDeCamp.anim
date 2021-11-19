@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animation
+  m_Name: FeuDeCamp
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2568837401350651815, guid: 0ba0eed4befc8664ab8bc14dc7d6fe9a, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: -5784929331180331738, guid: 0ba0eed4befc8664ab8bc14dc7d6fe9a, type: 3}
-    - time: 0.33333334
+    - time: 0.21666667
       value: {fileID: 6703503656626188089, guid: 0ba0eed4befc8664ab8bc14dc7d6fe9a, type: 3}
-    - time: 0.5
+    - time: 0.35
       value: {fileID: -836580246522959223, guid: 0ba0eed4befc8664ab8bc14dc7d6fe9a, type: 3}
-    - time: 0.6666667
+    - time: 0.48333332
       value: {fileID: -6237535784788995661, guid: 0ba0eed4befc8664ab8bc14dc7d6fe9a, type: 3}
     attribute: m_Sprite
     path: 
@@ -58,7 +58,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
