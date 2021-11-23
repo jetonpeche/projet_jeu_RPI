@@ -39,7 +39,6 @@ public class Deplacement : MonoBehaviour
     public void OnHorizontal(InputValue _val)
     {
         mouvH = _val.Get<float>();
-        Debug.Log(mouvH);
         FlipX(mouvH);
     }
 

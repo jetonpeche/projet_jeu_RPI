@@ -28,6 +28,14 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Soigner",
+                    "type": "Button",
+                    "id": "9333063c-7bfd-43db-80f4-b680fe77d58a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -118,6 +126,17 @@
                     "action": "Vertical",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "43bc62c6-1cb7-4040-869c-711261f4eb32",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "joueurClavierSouris",
+                    "action": "Soigner",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -937,7 +937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &761163747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1028,7 +1028,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1784231308}
   m_HandleRect: {fileID: 0}
@@ -6318,7 +6318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: b6fd9662f3784eb4089ac213d2466758, type: 3}
   m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 1352973065}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6347,6 +6347,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intervalFlecheGenerer: {x: 2, y: 4}
+--- !u!114 &1480796896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480796893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a966f38c70a12f345bc545187bb1abf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vieActuelle: 0
+  vieMax: 100
+  barreDeVie: {fileID: 1876739134}
 --- !u!1 &1533578518
 GameObject:
   m_ObjectHideFlags: 0
@@ -7154,7 +7169,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.397995, y: 0}
   m_SizeDelta: {x: -9.563, y: -6.376}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14530,7 +14545,6 @@ GameObject:
   - component: {fileID: 1876739133}
   - component: {fileID: 1876739135}
   - component: {fileID: 1876739134}
-  - component: {fileID: 1876739136}
   m_Layer: 5
   m_Name: BarreDeVieJ1
   m_TagString: Untagged
@@ -14593,7 +14607,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -14613,7 +14627,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1453774861}
   m_HandleRect: {fileID: 0}
@@ -14621,25 +14635,10 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1876739136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876739132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a966f38c70a12f345bc545187bb1abf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vieActuelle: 0
-  vieMax: 100
-  barreDeVie: {fileID: 1876739134}
 --- !u!1 &1984533241
 GameObject:
   m_ObjectHideFlags: 0

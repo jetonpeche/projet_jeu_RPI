@@ -1,16 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BarreDeVie : MonoBehaviour
 {
     public Slider sliderVie;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void BaisserVie(float degats)
     {
@@ -20,5 +13,11 @@ public class BarreDeVie : MonoBehaviour
     public void MonterVie(float vieAjout)
     {
         sliderVie.value += vieAjout;
+    }
+
+    public void SetVieMaxDebut(float _vieMax)
+    {
+        sliderVie.maxValue = _vieMax;
+        sliderVie.value = _vieMax;
     }
 }

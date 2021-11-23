@@ -1,27 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class VieJoueur : MonoBehaviour
 {
-    public float vieActuelle;
-    public float vieMax;
-    public BarreDeVie barreDeVie;
-    // Start is called before the first frame update
+    [SerializeField] private float vieMax;
+    [SerializeField] private BarreDeVie barreDeVie;
+
+    private float vieActuelle;
+
     void Start()
     {
-        barreDeVie.sliderVie.maxValue = vieMax;
+        barreDeVie.SetVieMaxDebut(vieMax);
         vieActuelle = vieMax;
     }
 
-    public void SubirDegats(float degats)
+    private void Update()
     {
-        vieActuelle -= degats;
-        barreDeVie.BaisserVie(degats);
-        if(vieActuelle <= 0)
+        // equivalent getKeyDown() (actif une fois par etat)
+        if (Keyboard.current.wKey.wasPressedThisFrame)
+        {
+            SubirDegats(40);
+        }
+    }
+
+    public void SubirDegats(float _degats)
+    {
+        vieActuelle -= _degats;
+        barreDeVie.BaisserVie(_degats);
+
+        if (vieActuelle <= 0)
         {
             Mort();
         }
+    }
+
+    public void OnSoigner()
+    {
+        SeSoigner(20);
     }
 
     private void Mort()
@@ -29,13 +44,20 @@ public class VieJoueur : MonoBehaviour
         Debug.Log("Mort");
     }
 
-    public void SeSoigner(float vie)
+    private void SeSoigner(float _vie)
     {
-        vieActuelle += vie;
-        barreDeVie.MonterVie(vie);
-        if (vieActuelle > vieMax)
+        if(vieActuelle <  vieMax && Inventaire.instance.NbPopSoin > 0)
         {
-            vieActuelle = vieMax;
+            Inventaire.instance.NbPopSoin--;
+
+            vieActuelle += _vie;
+            barreDeVie.MonterVie(_vie);
+
+            if (vieActuelle > vieMax)
+            {
+                vieActuelle = vieMax;
+            }
         }
+        
     }
 }

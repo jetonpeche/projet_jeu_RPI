@@ -41,6 +41,14 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Soigner"",
+                    ""type"": ""Button"",
+                    ""id"": ""9333063c-7bfd-43db-80f4-b680fe77d58a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -131,6 +139,17 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                     ""action"": ""Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43bc62c6-1cb7-4040-869c-711261f4eb32"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""joueurClavierSouris"",
+                    ""action"": ""Soigner"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -180,6 +199,7 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
         m_joueur1_Sauter = m_joueur1.FindAction("Sauter", throwIfNotFound: true);
         m_joueur1_Horizontal = m_joueur1.FindAction("Horizontal", throwIfNotFound: true);
         m_joueur1_Vertical = m_joueur1.FindAction("Vertical", throwIfNotFound: true);
+        m_joueur1_Soigner = m_joueur1.FindAction("Soigner", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -232,6 +252,7 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
     private readonly InputAction m_joueur1_Sauter;
     private readonly InputAction m_joueur1_Horizontal;
     private readonly InputAction m_joueur1_Vertical;
+    private readonly InputAction m_joueur1_Soigner;
     public struct Joueur1Actions
     {
         private @InputActionJoueur m_Wrapper;
@@ -239,6 +260,7 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
         public InputAction @Sauter => m_Wrapper.m_joueur1_Sauter;
         public InputAction @Horizontal => m_Wrapper.m_joueur1_Horizontal;
         public InputAction @Vertical => m_Wrapper.m_joueur1_Vertical;
+        public InputAction @Soigner => m_Wrapper.m_joueur1_Soigner;
         public InputActionMap Get() { return m_Wrapper.m_joueur1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -257,6 +279,9 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                 @Vertical.started -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnVertical;
                 @Vertical.performed -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnVertical;
                 @Vertical.canceled -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnVertical;
+                @Soigner.started -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnSoigner;
+                @Soigner.performed -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnSoigner;
+                @Soigner.canceled -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnSoigner;
             }
             m_Wrapper.m_Joueur1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -270,6 +295,9 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                 @Vertical.started += instance.OnVertical;
                 @Vertical.performed += instance.OnVertical;
                 @Vertical.canceled += instance.OnVertical;
+                @Soigner.started += instance.OnSoigner;
+                @Soigner.performed += instance.OnSoigner;
+                @Soigner.canceled += instance.OnSoigner;
             }
         }
     }
@@ -297,5 +325,6 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
         void OnSauter(InputAction.CallbackContext context);
         void OnHorizontal(InputAction.CallbackContext context);
         void OnVertical(InputAction.CallbackContext context);
+        void OnSoigner(InputAction.CallbackContext context);
     }
 }
