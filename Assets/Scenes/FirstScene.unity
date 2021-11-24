@@ -973,7 +973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a966f38c70a12f345bc545187bb1abf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vieActuelle: 0
   vieMax: 100
   barreDeVie: {fileID: 761163749}
 --- !u!114 &761163749
@@ -5991,7 +5990,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1409392167}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c52809ec6dbe86745a89f0daedfc674d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -6245,9 +6244,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1480796894, guid: 37277f0cd3586ca408940c902a0c1811, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 1352973065}
+    - target: {fileID: 1480796896, guid: 37277f0cd3586ca408940c902a0c1811, type: 3}
+      propertyPath: barreDeVie
+      value: 
+      objectReference: {fileID: 1876739134}
     - target: {fileID: 970826401940518274, guid: 37277f0cd3586ca408940c902a0c1811, type: 3}
       propertyPath: vitesse
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 970826401940518280, guid: 37277f0cd3586ca408940c902a0c1811, type: 3}
       propertyPath: m_Name
@@ -6299,69 +6306,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37277f0cd3586ca408940c902a0c1811, type: 3}
---- !u!1 &1480796893 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 970826401940518280, guid: 37277f0cd3586ca408940c902a0c1811, type: 3}
-  m_PrefabInstance: {fileID: 1480796892}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1480796894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480796893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b6fd9662f3784eb4089ac213d2466758, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 1352973065}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: joueur1
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &1480796895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480796893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2bc2b160346d74438d3fc5cb6acd684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intervalFlecheGenerer: {x: 2, y: 4}
---- !u!114 &1480796896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480796893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a966f38c70a12f345bc545187bb1abf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vieActuelle: 0
-  vieMax: 100
-  barreDeVie: {fileID: 1876739134}
 --- !u!1 &1533578518
 GameObject:
   m_ObjectHideFlags: 0

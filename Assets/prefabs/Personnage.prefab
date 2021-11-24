@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 970826401940518284}
   - component: {fileID: 970826401940518275}
   - component: {fileID: 970826401940518274}
+  - component: {fileID: 1480796894}
+  - component: {fileID: 1480796895}
+  - component: {fileID: 1480796896}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Untagged
@@ -156,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estJoueurDeux: 0
-  vitesse: 8
+  vitesse: 2
   forceSaut: 500
   radius: 0.4
   layerSol:
@@ -166,6 +169,63 @@ MonoBehaviour:
   animator: {fileID: 970826401940518275}
   spriteRenderer: {fileID: 970826401940518287}
   estAuSolTransform: {fileID: 970826402354179107}
+--- !u!114 &1480796894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970826401940518280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b6fd9662f3784eb4089ac213d2466758, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: joueur1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1480796895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970826401940518280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2bc2b160346d74438d3fc5cb6acd684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intervalFlecheGenerer: {x: 2, y: 4}
+--- !u!114 &1480796896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970826401940518280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a966f38c70a12f345bc545187bb1abf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vieMax: 100
+  barreDeVie: {fileID: 0}
 --- !u!1 &970826402354179116
 GameObject:
   m_ObjectHideFlags: 0
