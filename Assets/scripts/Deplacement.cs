@@ -19,6 +19,9 @@ public class Deplacement : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform estAuSolTransform;
 
+    [Space(20)]
+    [SerializeField] private Transform t_colliderCaC;
+
     private bool saute = false;
     private bool estAuSol;
     private float mouvH, mouvV;
@@ -28,7 +31,7 @@ public class Deplacement : MonoBehaviour
     {
 
         transform.Translate(new Vector2(mouvH, 0) * vitesse * Time.deltaTime);
-        //animator.SetFloat("vitesseMarche", Mathf.Abs(mouvH));
+        animator.SetFloat("bouger", Mathf.Abs(mouvH));
     }
 
     private void FixedUpdate()
@@ -73,6 +76,13 @@ public class Deplacement : MonoBehaviour
                 spriteRenderer.flipX = false;
             break;
         }
+
+        FlipXColliderCaC(spriteRenderer.flipX);
+    }
+
+    private void FlipXColliderCaC(bool _etat)
+    {
+        t_colliderCaC.eulerAngles = _etat ? new Vector3(t_colliderCaC.eulerAngles.x, 180) : new Vector3(t_colliderCaC.eulerAngles.x, 0);
     }
 
     private void OnDrawGizmos()

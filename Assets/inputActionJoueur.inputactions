@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Attaquer",
+                    "type": "Button",
+                    "id": "28d568af-1ac9-40c2-99fe-06976074f957",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -130,11 +138,22 @@
                 {
                     "name": "",
                     "id": "43bc62c6-1cb7-4040-869c-711261f4eb32",
-                    "path": "<Keyboard>/1",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "joueurClavierSouris",
                     "action": "Soigner",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e91faf1b-608f-4350-922f-25c3a4d31baf",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "joueurClavierSouris",
+                    "action": "Attaquer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
