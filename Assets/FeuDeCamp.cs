@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class FeuDeCamp : MonoBehaviour
 {
-    [SerializeField] private Animator animator = null;
     [SerializeField] private GameObject obj = null;
     [SerializeField] private Transform transformPtSpawn = null;
 
