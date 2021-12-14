@@ -13239,15 +13239,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0310bd2c9420aab4babc240c0b104fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degatCaC: 0
+  degatCaC: 10
   degatDistance: 0
-  couldownAttaqueCaC: 0
-  couldownAttaqueDistance: 0
+  couldownAttaqueCaC: 0.5
+  couldownAttaqueDistance: 1
   layerEnnemi:
     serializedVersion: 2
     m_Bits: 0
-  col: {fileID: 0}
-  animator: {fileID: 0}
+  col: {fileID: 1426193967}
+  animator: {fileID: 970826403152863071}
+  animControlleurCaC: {fileID: 9100000, guid: db8404c735ea5ad45bfefdfb87843c19, type: 2}
+  animControlleurDistance: {fileID: 9100000, guid: c1194b2f9f67e674bb29d48569a80fd1, type: 2}
   possedeArmeCaC: 1
 --- !u!114 &970826403152863070
 MonoBehaviour:
@@ -13262,7 +13264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estJoueurDeux: 0
-  vitesse: 4
+  vitesse: 0
   forceSaut: 300
   radius: 0.4
   layerSol:

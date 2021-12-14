@@ -57,6 +57,14 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AttaquerDistance"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a2f7517-c281-4664-9aeb-7dfe53f8e43d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -169,6 +177,17 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                     ""action"": ""Attaquer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50264653-6ff9-4757-9218-e41a7aaae015"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""joueurClavierSouris"",
+                    ""action"": ""AttaquerDistance"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -220,6 +239,7 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
         m_joueur1_Vertical = m_joueur1.FindAction("Vertical", throwIfNotFound: true);
         m_joueur1_Soigner = m_joueur1.FindAction("Soigner", throwIfNotFound: true);
         m_joueur1_Attaquer = m_joueur1.FindAction("Attaquer", throwIfNotFound: true);
+        m_joueur1_AttaquerDistance = m_joueur1.FindAction("AttaquerDistance", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -274,6 +294,7 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
     private readonly InputAction m_joueur1_Vertical;
     private readonly InputAction m_joueur1_Soigner;
     private readonly InputAction m_joueur1_Attaquer;
+    private readonly InputAction m_joueur1_AttaquerDistance;
     public struct Joueur1Actions
     {
         private @InputActionJoueur m_Wrapper;
@@ -283,6 +304,7 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
         public InputAction @Vertical => m_Wrapper.m_joueur1_Vertical;
         public InputAction @Soigner => m_Wrapper.m_joueur1_Soigner;
         public InputAction @Attaquer => m_Wrapper.m_joueur1_Attaquer;
+        public InputAction @AttaquerDistance => m_Wrapper.m_joueur1_AttaquerDistance;
         public InputActionMap Get() { return m_Wrapper.m_joueur1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -307,6 +329,9 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                 @Attaquer.started -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnAttaquer;
                 @Attaquer.performed -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnAttaquer;
                 @Attaquer.canceled -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnAttaquer;
+                @AttaquerDistance.started -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnAttaquerDistance;
+                @AttaquerDistance.performed -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnAttaquerDistance;
+                @AttaquerDistance.canceled -= m_Wrapper.m_Joueur1ActionsCallbackInterface.OnAttaquerDistance;
             }
             m_Wrapper.m_Joueur1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -326,6 +351,9 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
                 @Attaquer.started += instance.OnAttaquer;
                 @Attaquer.performed += instance.OnAttaquer;
                 @Attaquer.canceled += instance.OnAttaquer;
+                @AttaquerDistance.started += instance.OnAttaquerDistance;
+                @AttaquerDistance.performed += instance.OnAttaquerDistance;
+                @AttaquerDistance.canceled += instance.OnAttaquerDistance;
             }
         }
     }
@@ -355,5 +383,6 @@ public class @InputActionJoueur : IInputActionCollection, IDisposable
         void OnVertical(InputAction.CallbackContext context);
         void OnSoigner(InputAction.CallbackContext context);
         void OnAttaquer(InputAction.CallbackContext context);
+        void OnAttaquerDistance(InputAction.CallbackContext context);
     }
 }

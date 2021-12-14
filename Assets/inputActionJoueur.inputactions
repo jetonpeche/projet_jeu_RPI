@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AttaquerDistance",
+                    "type": "Button",
+                    "id": "6a2f7517-c281-4664-9aeb-7dfe53f8e43d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -154,6 +162,17 @@
                     "processors": "",
                     "groups": "joueurClavierSouris",
                     "action": "Attaquer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50264653-6ff9-4757-9218-e41a7aaae015",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "joueurClavierSouris",
+                    "action": "AttaquerDistance",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -13,34 +13,26 @@ public class AttaqueJoueur : MonoBehaviour
      
     [Space(20)]
     [SerializeField] private LayerMask layerEnnemi;
-    [SerializeField] private BoxCollider2D col;
+    [SerializeField] private BoxCollider2D zoneAttaqueCaC;
     [SerializeField] private Animator animator;
 
-
-    public bool possedeArmeCaC = true;
+    [Space(20)]
+    [SerializeField] private RuntimeAnimatorController animControlleurCaC;
+    [SerializeField] private RuntimeAnimatorController animControlleurDistance;
 
     private bool peuAttaquerCaC = true;
     private bool peuAttaquerDistance = true;
 
-    // event de l'input systeme point d'entrer pour l'attaque
     public void OnAttaquer()
     {
-        if (possedeArmeCaC)
-            AttaquerCaC();
-        else
-            AttaquerDistance();
-    }
-
-    private void AttaquerCaC()
-    {
-        if(peuAttaquerCaC)
+        if (peuAttaquerCaC)
         {
             animator.SetTrigger("attaqueCaC");
             StartCoroutine(CouldownAttaqueCaC());
         }
     }
 
-    private void AttaquerDistance()
+    public void OnAttaquerDistance()
     {
         if (peuAttaquerDistance)
         {
@@ -51,15 +43,15 @@ public class AttaqueJoueur : MonoBehaviour
 
     private IEnumerator CouldownAttaqueDistance()
     {
-        peuAttaquerCaC = false;
+        peuAttaquerDistance = false;
         yield return new WaitForSeconds(couldownAttaqueDistance);
-        peuAttaquerCaC = true;
+        peuAttaquerDistance = true;
     }
 
     private IEnumerator CouldownAttaqueCaC()
     {
-        peuAttaquerDistance = false;
+        peuAttaquerCaC = false;
         yield return new WaitForSeconds(couldownAttaqueCaC);
-        peuAttaquerDistance = true;
+        peuAttaquerCaC = true;
     }
 }
