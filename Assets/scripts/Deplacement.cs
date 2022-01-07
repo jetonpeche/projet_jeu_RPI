@@ -18,6 +18,7 @@ public class Deplacement : NetworkBehaviour
     [SerializeField] private NetworkAnimator netAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform estAuSolTransform;
+    [SerializeField] private AttaqueJoueur attaqueJoueur;
 
     [Space(20)]
     [SerializeField] private Transform t_colliderCaC;
@@ -25,7 +26,8 @@ public class Deplacement : NetworkBehaviour
     private bool saute = false;
     private bool estAuSol;
 
-    private float mouvH;
+    private float mouvH, mouvHActuel;
+
 
     // Update is called once per frame
     void Update()
@@ -43,6 +45,12 @@ public class Deplacement : NetworkBehaviour
     public void OnHorizontal(InputValue _val)
     {
         mouvH = _val.Get<float>();
+
+        // evite d'appeler la fonction pour rien
+        if (mouvH == mouvHActuel)
+            return;
+
+        mouvHActuel = mouvH;
         CMD_FlipX(mouvH);
     }
 
@@ -60,12 +68,14 @@ public class Deplacement : NetworkBehaviour
         }
     }
 
+    // fonction envoyer au serveur pour les autres joueurs
     [Command]
     private void CMD_FlipX(float _mouvH)
     {
         FlipX(_mouvH);   
     }
 
+    // fonction joueur local pour que tout les joueurs voit les changements
     [ClientRpc]
     private void FlipX(float _mouvH)
     {
@@ -81,6 +91,8 @@ public class Deplacement : NetworkBehaviour
         }
 
         FlipXColliderCaC(spriteRenderer.flipX);
+        attaqueJoueur.SetTransformPointSpawnFleche(spriteRenderer.flipX);
+
     }
 
     private void FlipXColliderCaC(bool _etat)
