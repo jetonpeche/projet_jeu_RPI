@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class AttaqueJoueur : MonoBehaviour
+public class AttaqueJoueur : NetworkBehaviour
 {
     [SerializeField] [Min(1)] private float degatCaC;
     [SerializeField] [Min(1)] private float degatDistance;

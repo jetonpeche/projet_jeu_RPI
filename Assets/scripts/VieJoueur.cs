@@ -36,7 +36,7 @@ public class VieJoueur : MonoBehaviour
 
     public void OnSoigner()
     {
-        SeSoigner(20);
+        //SeSoigner(20);
     }
 
     private void Mort()

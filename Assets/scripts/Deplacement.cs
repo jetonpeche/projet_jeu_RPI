@@ -1,21 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Mirror;
 
-public class Deplacement : MonoBehaviour
+public class Deplacement : NetworkBehaviour
 {
-    [SerializeField] private bool estJoueurDeux;
-
-    [Header("Saut")][Space]
+    [Header("Saut")]
     [SerializeField] private float vitesse;
     [SerializeField] private float forceSaut;
-    [Space(20)]
 
+    [Space(20)]
     [SerializeField] private float radius;
     [SerializeField] private LayerMask layerSol;
 
     [Space(20)]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
+    [SerializeField] private NetworkAnimator netAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform estAuSolTransform;
 
@@ -24,7 +24,8 @@ public class Deplacement : MonoBehaviour
 
     private bool saute = false;
     private bool estAuSol;
-    private float mouvH, mouvV;
+
+    private float mouvH;
 
     // Update is called once per frame
     void Update()
@@ -42,12 +43,7 @@ public class Deplacement : MonoBehaviour
     public void OnHorizontal(InputValue _val)
     {
         mouvH = _val.Get<float>();
-        FlipX(mouvH);
-    }
-
-    public void OnVertical(InputValue _val)
-    {
-        mouvV = _val.Get<float>();
+        CMD_FlipX(mouvH);
     }
 
     public void OnSauter()
@@ -64,17 +60,24 @@ public class Deplacement : MonoBehaviour
         }
     }
 
+    [Command]
+    private void CMD_FlipX(float _mouvH)
+    {
+        FlipX(_mouvH);   
+    }
+
+    [ClientRpc]
     private void FlipX(float _mouvH)
     {
         switch (_mouvH)
         {
             case -1:
                 spriteRenderer.flipX = true;
-            break;
+                break;
 
             case 1:
                 spriteRenderer.flipX = false;
-            break;
+                break;
         }
 
         FlipXColliderCaC(spriteRenderer.flipX);
