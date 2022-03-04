@@ -46,11 +46,13 @@ public class AttaqueJoueur : NetworkBehaviour
     {
         if(_etatFlipX)
         {
+            // place bien la fleche sur l'arc
             t_ptSpawnFleche.localPosition = new Vector3(0.065f, 0.06f, 0);
             t_ptSpawnFleche.eulerAngles = new Vector3(0, 180, 0);
         }
         else
         {
+            // place bien la fleche sur l'arc
             t_ptSpawnFleche.localPosition = new Vector3(-0.06f, 0.06f, 0);
             t_ptSpawnFleche.eulerAngles = Vector3.zero;
         }
