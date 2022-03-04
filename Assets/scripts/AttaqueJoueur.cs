@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
@@ -10,8 +9,8 @@ public class AttaqueJoueur : NetworkBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Space(20)]
-    [SerializeField] [Min(1)] private float degatCaC;
-    [SerializeField] [Min(1)] private float degatDistance;
+    [SerializeField] private Vector2Int intervalDegatDistance;
+    [SerializeField] private Vector2Int intervalDegatCac;
 
     [Space(20)]
     [SerializeField] private float couldownAttaqueCaC;
@@ -45,7 +44,6 @@ public class AttaqueJoueur : NetworkBehaviour
 
     public void SetTransformPointSpawnFleche(bool _etatFlipX)
     {
-
         if(_etatFlipX)
         {
             t_ptSpawnFleche.localPosition = new Vector3(0.065f, 0.06f, 0);
@@ -61,7 +59,10 @@ public class AttaqueJoueur : NetworkBehaviour
     // declancher depuis l'animator
     private void LancerFleche()
     {
-        Instantiate(flechePrefab, t_ptSpawnFleche.position, t_ptSpawnFleche.rotation);
+        GameObject obj = Instantiate(flechePrefab, t_ptSpawnFleche.position, t_ptSpawnFleche.rotation);
+
+        int degat = Random.Range(intervalDegatDistance.x, intervalDegatDistance.y);
+        obj.GetComponent<Fleche>().degat = degat;
     }
 
     private IEnumerator CouldownAttaqueDistance()

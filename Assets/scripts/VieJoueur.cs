@@ -5,6 +5,7 @@ public class VieJoueur : MonoBehaviour
 {
     [SerializeField] private float vieMax;
     [SerializeField] private BarreDeVie barreDeVie;
+    [SerializeField] private Inventaire inventaire;
 
     private float vieActuelle;
 
@@ -12,15 +13,6 @@ public class VieJoueur : MonoBehaviour
     {
         barreDeVie.SetVieMaxDebut(vieMax);
         vieActuelle = vieMax;
-    }
-
-    private void Update()
-    {
-        // equivalent getKeyDown() (actif une fois par etat)
-        if (Keyboard.current.wKey.wasPressedThisFrame)
-        {
-            SubirDegats(40);
-        }
     }
 
     public void SubirDegats(float _degats)
@@ -36,7 +28,7 @@ public class VieJoueur : MonoBehaviour
 
     public void OnSoigner()
     {
-        //SeSoigner(20);
+        SeSoigner(20);
     }
 
     private void Mort()
@@ -46,9 +38,9 @@ public class VieJoueur : MonoBehaviour
 
     private void SeSoigner(float _vie)
     {
-        if(vieActuelle <  vieMax && Inventaire.instance.NbPopSoin > 0)
+        if(vieActuelle <  vieMax && inventaire.NbPopSoin > 0)
         {
-            Inventaire.instance.NbPopSoin--;
+            inventaire.NbPopSoin--;
 
             vieActuelle += _vie;
             barreDeVie.MonterVie(_vie);

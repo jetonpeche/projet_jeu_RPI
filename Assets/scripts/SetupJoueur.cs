@@ -8,6 +8,7 @@ public class SetupJoueur : NetworkBehaviour
 
     [SerializeField] private Behaviour[] listeADesactiver;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,7 @@ public class SetupJoueur : NetworkBehaviour
         }
         else
         {
-
+            Camera.main.gameObject.SetActive(false);
         }
-        
     }
-
 }

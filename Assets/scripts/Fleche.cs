@@ -5,12 +5,7 @@ using UnityEngine;
 public class Fleche : MonoBehaviour
 {
     [SerializeField] private float vitesse = 5f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public int degat;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +15,10 @@ public class Fleche : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.GetComponent<VieJoueur>().SubirDegats(degat);
+            Destroy(gameObject);
+        }
     }
 }

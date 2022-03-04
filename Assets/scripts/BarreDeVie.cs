@@ -7,7 +7,7 @@ public class BarreDeVie : MonoBehaviour
 
     public void BaisserVie(float degats)
     {
-        sliderVie.value -= degats;        
+        sliderVie.value -= degats;
     }
 
     public void MonterVie(float vieAjout)

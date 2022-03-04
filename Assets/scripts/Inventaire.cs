@@ -32,22 +32,6 @@ public class Inventaire : MonoBehaviour
         }
     }
 
-    #region Singleton
-
-    public static Inventaire instance;
-
-    
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Debug.LogError("ATTENTION: plus d'une instance d'inventaire");
-    }
-
-    #endregion
-
     void Start()
     {
         textMunition.text = NbMunition.ToString();

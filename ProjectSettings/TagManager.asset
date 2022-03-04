@@ -7,6 +7,7 @@ TagManager:
   - munition
   - popoSoin
   - popoMana
+  - obstacle
   layers:
   - Default
   - TransparentFX

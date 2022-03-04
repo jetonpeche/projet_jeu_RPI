@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RamasserObj : MonoBehaviour
 {
     [SerializeField]
     private Vector2Int intervalFlecheGenerer;
+    [SerializeField] private Inventaire inventaire;
 
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -13,7 +12,7 @@ public class RamasserObj : MonoBehaviour
         switch (col.transform.tag)
         {
             case "munition":
-                if(!Inventaire.instance.ReserveMunitionPleine())
+                if(!inventaire.ReserveMunitionPleine())
                 {
                     Munition mun = col.GetComponent<Munition>();
 
@@ -21,11 +20,11 @@ public class RamasserObj : MonoBehaviour
                     if(mun.NbFlecheRestante == 0)
                     {
                         int nbFleche = Random.Range(intervalFlecheGenerer.x, intervalFlecheGenerer.y);
-                        mun.MajFlecheRestante(Inventaire.instance.AjouterFleche(nbFleche));
+                        mun.MajFlecheRestante(inventaire.AjouterFleche(nbFleche));
                     }
                     else
                     {
-                        mun.MajFlecheRestante(Inventaire.instance.AjouterFleche(mun.NbFlecheRestante));
+                        mun.MajFlecheRestante(inventaire.AjouterFleche(mun.NbFlecheRestante));
                     }          
 
                     if(mun.NbFlecheRestante == 0)
@@ -34,12 +33,12 @@ public class RamasserObj : MonoBehaviour
                 break;
 
             case "popoSoin":
-                Inventaire.instance.NbPopSoin++;
+                inventaire.NbPopSoin++;
                 Destroy(col.gameObject);
                 break;
 
             case "popoMana":
-                Inventaire.instance.NbPopMana++;
+                inventaire.NbPopMana++;
                 Destroy(col.gameObject);
                 break;
         }
