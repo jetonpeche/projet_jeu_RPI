@@ -12,8 +12,8 @@ public class PlaqueDePression : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Entre dans la zone plaque");
             estDansZone = true;
+            animator.Play("PlaquePressionActivee");
         }
     }
 
@@ -21,8 +21,8 @@ public class PlaqueDePression : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Sort de la zone plaque");
             estDansZone = false;
+            animator.Play("PlaquePressionDesactivee");
         }
     }
 }
