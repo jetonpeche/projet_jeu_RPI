@@ -1,4 +1,3 @@
-using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class VieJoueur : MonoBehaviour
@@ -38,6 +37,9 @@ public class VieJoueur : MonoBehaviour
 
     private void SeSoigner(float _vie)
     {
+        if (inventaire == null)
+            return;
+
         if(vieActuelle <  vieMax && inventaire.NbPopSoin > 0)
         {
             inventaire.NbPopSoin--;

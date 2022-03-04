@@ -374,7 +374,7 @@ MonoBehaviour:
   t_ptSpawnFleche: {fileID: 8698929507313781199}
   spriteRenderer: {fileID: 6002934139027206286}
   intervalDegatDistance: {x: 10, y: 50}
-  intervalDegatCac: {x: 0, y: 0}
+  intervalDegatCac: {x: 5, y: 10}
   couldownAttaqueCaC: 0.5
   couldownAttaqueDistance: 1
   layerEnnemi:
